@@ -190,14 +190,14 @@ const searchDogName = (req, res) => {
     }
 
     // if doggie found...
-    lastDogAdded.age++;
-    const savePromise = lastDogAdded.save();
+    doc.age++;
+    const savePromise = doc.save();
     // update
     savePromise.then(() => {
       res.json({
-        name: lastDogAdded.name,
-        breed: lastDogAdded.breed,
-        age: lastDogAdded.age,
+        name: doc.name,
+        breed: doc.breed,
+        age: doc.age,
       });
     });
     return res.json({
